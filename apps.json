@@ -15,6 +15,19 @@
       "iconURL": "https://raw.githubusercontent.com/drflax/repoflax/main/Bruce.png",
       "size": 3873330,
       "permissions": []
+    },
+    {
+      "name": "Touchosc.V1.9.3",
+      "bundleIdentifier": "com.repo.touchosc.v1.9.3",
+      "developerName": "DrFlax",
+      "version": "TouchOSC_1.9.3",
+      "versionDate": "2026-11-06",
+      "versionDescription": "Touch OSC",
+      "downloadURL": "https://github.com/drflax/repoflax/releases/download/TouchOSC_1.9.3/TouchOSC.v1.9.3.ipa",
+      "localizedDescription": "Aplicación Touchosc.V1.9.3 gestionada automáticamente por GitHub Actions.",
+      "iconURL": "https://raw.githubusercontent.com/drflax/repoflax/main/touchosc.v1.9.3.png",
+      "size": 1968431,
+      "permissions": []
     }
   ],
   "news": []

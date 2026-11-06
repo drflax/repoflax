@@ -1,0 +1,28 @@
+name: Actualizar Source Automáticamente
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar entorno de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Ejecutar script de actualización
+        run: python update_apps.py
+
+      - name: Guardar y subir cambios al repositorio
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto-actualizar apps.json con el nuevo release"
+          file_pattern: apps.json

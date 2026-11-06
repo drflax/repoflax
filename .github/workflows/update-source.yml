@@ -10,8 +10,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Descargar código del repositorio
+      - name: Descargar código del repositorio y apuntar a main
         uses: actions/checkout@v4
+        with:
+          ref: main   # <--- FUERZA A QUE EL CHECKOUT SE HAGA EN LA RAMA MAIN
 
       - name: Configurar entorno de Python
         uses: actions/setup-python@v5

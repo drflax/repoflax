@@ -1,0 +1,21 @@
+{
+  "name": "RepoFlax",
+  "identifier": "com.repoflax.livecontainer.repo",
+  "sourceURL": "https://raw.githubusercontent.com/drflax/repoflax/main/apps.json",
+  "apps": [
+    {
+      "name": "Nombre de la Aplicación",
+      "bundleIdentifier": "com.desarrollador.app",
+      "developerName": "Tu Nombre o el del autor",
+      "version": "1.0.0",
+      "versionDate": "2026-06-01",
+      "versionDescription": "Lanzamiento inicial adaptado para LiveContainer.",
+      "downloadURL": "https://raw.githubusercontent.com/TU-USUARIO/TU-REPO/main/ipa/tu-app.ipa",
+      "localizedDescription": "Descripción detallada de lo que hace tu aplicación dentro del entorno virtualizado.",
+      "iconURL": "https://raw.githubusercontent.com/TU-USUARIO/TU-REPO/main/assets/icon.png",
+      "size": 15000000,
+      "permissions": []
+    }
+  ],
+  "news": []
+}

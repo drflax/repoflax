@@ -1,0 +1,31 @@
+name: Actualizar Source Automáticamente
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar entorno de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Ejecutar script de actualización
+        run: python update_apps.py
+
+      - name: Configurar Git y subir cambios a main
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout main || git checkout -b main
+          git add apps.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Auto-actualizar apps.json con el nuevo release"
+          git push origin main

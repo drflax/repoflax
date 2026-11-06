@@ -12,8 +12,8 @@
       "versionDescription": "Lanzamiento inicial adaptado para LiveContainer.",
       "downloadURL": "https://github.com/drflax/repoflax/releases/download/Version/Bruce-app-ios.ipa",
       "localizedDescription": "Bruce Remote uses Bluetooth to connect to and control your Bruce device.",
-      "iconURL": "https://github.com/drflax/repoflax/blob/main/Bruce.png",
-      "size": 15000000,
+      "iconURL": "https://raw.githubusercontent.com/drflax/repoflax/main/Bruce.png",
+      "size": 3873330,
       "permissions": []
     }
   ],

@@ -26,4 +26,4 @@ jobs:
         with:
           commit_message: "🤖 Auto-actualizar apps.json con el nuevo release"
           file_pattern: apps.json
-          branch: main   # <--- AÑADE ESTA LÍNEA AQUÍ
+          branch: main

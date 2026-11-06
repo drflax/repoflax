@@ -10,10 +10,8 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Descargar código del repositorio y apuntar a main
+      - name: Descargar código del repositorio
         uses: actions/checkout@v4
-        with:
-          ref: main   # <--- FUERZA A QUE EL CHECKOUT SE HAGA EN LA RAMA MAIN
 
       - name: Configurar entorno de Python
         uses: actions/setup-python@v5
@@ -23,9 +21,11 @@ jobs:
       - name: Ejecutar script de actualización
         run: python update_apps.py
 
-      - name: Guardar y subir cambios al repositorio
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "🤖 Auto-actualizar apps.json con el nuevo release"
-          file_pattern: apps.json
-          branch: main
+      - name: Configurar Git y subir cambios a main
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout main || git checkout -b main
+          git add apps.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Auto-actualizar apps.json con el nuevo release"
+          git push origin main
